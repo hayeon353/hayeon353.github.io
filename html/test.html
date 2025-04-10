@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>구글 앱스 스크립트로 정보 전달</title>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+
+            fetch("https://script.google.com/macros/s/AKfycbwPEjC3LiXvr7QVeZ7HU5k8Mb1bHgFi_gy5TzyOez9lqGCtTcqmYhbjypFfJsaCO_hO/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`
+            }).then(response => {
+                alert("정보가 성공적으로 전송되었습니다!");
+            }).catch(error => {
+                alert("전송 실패: " + error.message);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>정보 제출 폼</h2>
+    <form onsubmit="submitForm(event)">
+        <label for="email">이메일:ddddns@naver.com</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="name">이름:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="message">하고 싶은 말:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

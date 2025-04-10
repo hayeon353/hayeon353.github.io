@@ -1,0 +1,43 @@
+body{
+  background-color:mistyrose;
+  text-align:center;
+}
+
+h2{
+  color:pink;
+  text-align:center;
+}
+
+li {
+  list-style-position: inside;
+  font-size: 15px; 
+}
+
+a {
+  color: teal;
+}
+
+
+ul {
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+}
+
+div{
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+}
+
+td{
+  text-align:center;
+}
+
+.projects {
+  text-align: center;
+}
+
+.project-table {
+  margin: 0 auto;
+}
