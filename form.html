@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>구글 앱스 스크립트로 정보 전달</title>
+    <style>
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+
+            event.preventDefault();
+
+
+
+            const email = document.getElementById("email").value;
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+            const interest = document.getElementById("interest").value;
+            const studyTime = document.getElementById("studyTime").value;
+            const status = document.getElementById("status").value;
+            const major = document.getElementById("major").value;
+        
+
+
+
+            fetch("https://script.google.com/macros/s/AKfycbw9jNdaHQzJuzCfr46vPAm82eDtUQ-Uo9AXoXPoLZg03nF_8nH5q9Il-dKppjEIyIMG/exec", {
+
+                method: "POST",
+
+                mode: "no-cors",
+
+
+                headers: {
+
+                    "Content-Type": "application/json"
+
+                },
+
+                body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&interest=${encodeURIComponent(interest)}&studyTime=${encodeURIComponent(studyTime)}&status=${encodeURIComponent(status)}&major=${encodeURIComponent(major)}`
+
+            }).then(response => {
+
+                alert("정보가 성공적으로 전송되었습니다!");
+
+            }).catch(error => {
+
+                alert("전송 실패: " + error.message);
+
+            });
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">정보 제출 폼</h2>
+
+    <form onsubmit="submitForm(event)">
+
+        
+            <!-- 첫 번째 fieldset -->
+            <fieldset>
+                <legend>설문 응답</legend>
+        
+                <!-- (7) 여러줄 텍스트 입력 -->
+                <label for="message">하고 싶은 말:</label><br>
+                <textarea id="message" name="message" required></textarea><br><br>
+        
+                <!-- (1) 일반 텍스트 -->
+                <label for="interest">관심 분야:</label><br>
+                <input type="text" id="interest" name="interest" placeholder="예: 인공지능, 웹 개발"><br><br>
+        
+                <!-- (6) 콤보박스 -->
+                <label for="status">수강 상태:</label><br>
+                <select id="status" name="status">
+                    <option value="in">수강 중</option>
+                    <option value="planned">수강 예정</option>
+                    <option value="not">수강 안 함</option>
+                </select><br><br>
+            </fieldset>
+        
+            <!-- 두 번째 fieldset -->
+            <fieldset>
+                <legend>개인 정보</legend>
+        
+                <!-- (2) 이메일 입력 -->
+                <label for="email">이메일:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <!-- (3) 데이터 목록 -->
+                <label for="language">주 사용 언어:</label><br>
+                <input list="languages" id="language" name="language">
+                <datalist id="languages">
+                    <option value="C">
+                    <option value="Python">
+                    <option value="JavaScript">
+                    <option value="Java">
+                </datalist><br><br>
+        
+                <!-- (4) 체크박스 -->
+                <label>관심 주제:</label><br>
+                <input type="checkbox" id="frontend" name="topic" value="frontend">
+                <label for="frontend">프론트엔드</label><br>
+                <input type="checkbox" id="backend" name="topic" value="backend">
+                <label for="backend">백엔드</label><br><br>
+        
+                <!-- (5) 라디오 버튼 -->
+                <label>학습 경험:</label><br>
+                <input type="radio" id="beginner" name="experience" value="beginner">
+                <label for="beginner">초급</label><br>
+                <input type="radio" id="intermediate" name="experience" value="intermediate">
+                <label for="intermediate">중급</label><br>
+                <input type="radio" id="advanced" name="experience" value="advanced">
+                <label for="advanced">고급</label><br><br>
+        
+                <!-- 추가: 하루 공부 시간 -->
+                <label for="studyTime">하루 평균 공부 시간(시간):</label><br>
+                <input type="number" id="studyTime" name="studyTime" min="0"><br><br>
+            </fieldset>
+        
+
+
+        <button type="submit">제출</button>
+
+    </form>
+
+</body>
+
+</html>
+
+
+
