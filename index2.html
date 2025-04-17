@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8"> 
     <title>덕성여대 맛집 투 하연</title>
+    <style>
+      /* 마우스를 테이블 행에 올렸을 때 배경색 변경 */
+      table tr:hover {
+        background-color: #b9399d; 
+      }
+    </style>
   </head>
   <body>
    <header>
@@ -52,119 +58,109 @@
       </h2>
       <section id="restaurant_list">
         <h2>덕성여대 맛집 목록</h2>
-        <!-- 각 맛집별 iframe으로 상세페이지 연결 -->
-        <h3>1. 미성반점</h3>
-        <iframe src="./pages/place1.html" width="100%" height="300" title="미성반점 상세페이지"></iframe>
-        <h3>2. 춘천막국수</h3>
-        <iframe src="./pages/place2.html" width="100%" height="300" title="춘천막국수 상세페이지"></iframe>
-        <h3>3. 궁전회관 수유</h3>
-        <iframe src="./pages/place3.html" width="100%" height="300" title="궁전회관 상세페이지"></iframe>
-        <h3>4. 히피스베이글 덕성여대</h3>
-        <iframe src="./pages/place4.html" width="100%" height="300" title="히피스베이글 상세페이지"></iframe>
-        <h3>5. 마포감자국 수유</h3>
-        <iframe src="./pages/place5.html" width="100%" height="300" title="마포감자국 상세페이지"></iframe>
-        <h3>6. 예와손만두 419</h3>
-        <iframe src="./pages/place6.html" width="100%" height="300" title="예와손만두 상세페이지"></iframe>
-        <h3>7. 진미기사식당 수유</h3>
-        <iframe src="./pages/place7.html" width="100%" height="300" title="진미기사식당 상세페이지"></iframe>
-        <h3>8. 우이동주막집 우이동</h3>
-        <iframe src="./pages/place8.html" width="100%" height="300" title="우이동주막집 상세페이지"></iframe>
-        <h3>9. 슬로핸드 우이동</h3>
-        <iframe src="./pages/place9.html" width="100%" height="300" title="슬로핸드 상세페이지"></iframe>
-        <h3>10. 엄마손돼지불백 수유본점</h3>
-        <iframe src="./pages/place10.html" width="100%" height="300" title="엄마손돼지불백 상세페이지"></iframe>
+        <!-- 각 맛집별 링크로 상세페이지 연결 -->
+        <h3><a href="./pages/place1.html" target="_blank" title="미성반점 상세페이지">1. 미성반점</a></h3>
+        <h3><a href="./pages/place2.html" target="_blank" title="춘천막국수 상세페이지">2. 춘천막국수</a></h3>
+        <h3><a href="./pages/place3.html" target="_blank" title="궁전회관 상세페이지">3. 궁전회관 수유</a></h3>
+        <h3><a href="./pages/place4.html" target="_blank" title="히피스베이글 상세페이지">4. 히피스베이글 덕성여대</a></h3>
+        <h3><a href="./pages/place5.html" target="_blank" title="마포감자국 상세페이지">5. 마포감자국 수유</a></h3>
+        <h3><a href="./pages/place6.html" target="_blank" title="예와손만두 상세페이지">6. 예와손만두 419</a></h3>
+        <h3><a href="./pages/place7.html" target="_blank" title="진미기사식당 상세페이지">7. 진미기사식당 수유</a></h3>
+        <h3><a href="./pages/place8.html" target="_blank" title="우이동주막집 상세페이지">8. 우이동주막집 우이동</a></h3>
+       <h3><a href="./pages/place9.html" target="_blank" title="슬로핸드 상세페이지">9. 슬로핸드 우이동</a></h3>
+       <h3><a href="./pages/place10.html" target="_blank" title="엄마손돼지불백 상세페이지">10. 엄마손돼지불백 수유본점</a></h3>   
       </section>
   </article>
 </section>
 <hr>
 
 <!-- 맛집 상세 정보 테이블 -->
-<section id="restaurant_detail">
+<section id="restaurant_detail" style="text-align: center;">
   <h2>맛집 상세 정보</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>대표이미지</th>
-          <th>상호</th>
-          <th>구분</th>
-          <th>평점</th>
-          <th>위치</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 각 맛집의 이미지 + 텍스트 정보 -->
-        <tr>
-          <td><a href="pages/place1.html"><img src="./media/place1.jpg" alt="미성반점" width="100" height="100" title="이미지를 클릭하면 미성반점 상세페이지로 이동합니다."></a></td>
-          <td>미성반점</td>
-          <td>짬뽕, 중국집</td>
-          <td>4.6</td>
-          <td>서울특별시 강북구 4.19로 37 1층</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place2.html"><img src="./media/place2.jpg" alt="춘천막국수" width="100" height="100" title="이미지를 클릭하면 춘천막국수 상세페이지로 이동합니다."></a></td>
-          <td>춘천막국수</td>
-          <td>막국수, 녹두전</td>
-          <td>4.4</td>
-          <td>서울특별시 강북구 삼양로141길 4-4 춘천막국수</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place3.html"><img src="./media/place3.jpg" alt="궁전회관" width="100" height="100" title="이미지를 클릭하면 궁전회관 상세페이지로 이동합니다."></a></td>
-          <td>궁전회관</td>
-          <td>기사식당, 연탄불백</td>
-          <td>4.2</td>
-          <td>서울특별시 강북구 한천로 1159 1층</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place4.html"><img src="./media/place4.jpg" alt="히피스베이글" width="100" height="100" title="이미지를 클릭하면 히피스베이글 상세페이지로 이동합니다."></a></td>
-          <td>히피스베이글</td>
-          <td>베이글, 빵</td>
-          <td>4.7</td>
-          <td>서울특별시 강북구 삼양로 528 1층</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place5.html"><img src="./media/place5.jpg" alt="마포감자국" width="100" height="100"></a></td>
-          <td>마포감자국</td>
-          <td>감자탕, 감자국</td>
-          <td>4.4</td>
-          <td>서울특별시 강북구 한천로 1158 1층</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place6.html"><img src="./media/place6.jpg" alt="예와 손만두" width="100" height="100"></a></td>
-          <td>예와 손만두</td>
-          <td>만두, 만두전골</td>
-          <td>4.6</td>
-          <td>서울특별시 강북구 4.19로 40-8 예와 손만두</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place7.html"><img src="./media/place7.jpg" alt="진미기사식당" width="100" height="100"></a></td>
-          <td>진미기사식당</td>
-          <td>기사식당, 한천</td>
-          <td>4.1</td>
-          <td>서울특별시 강북구 한천로 1163 1층 진미기사식당</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place8.html"><img src="./media/place8.jpg" alt="우이동주막집" width="100" height="100"></a></td>
-          <td>우이동주막집</td>
-          <td>족발, 보쌈</td>
-          <td>4.2</td>
-          <td>서울특별시 강북구 삼양로141길 4-6 우이주막집</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place9.html"><img src="./media/place9.jpg" alt="슬로핸드" width="100" height="100"></a></td>
-          <td>슬로핸드</td>
-          <td>카페, 핸드드립커피</td>
-          <td>4.5</td>
-          <td>서울특별시 강북구 삼양로141길 15-8</td>
-        </tr>
-        <tr>
-          <td><a href="pages/place10.html"><img src="./media/place10.jpg" alt="엄마손 돼지불백" width="100" height="100"></a></td>
-          <td>엄마손 돼지불백</td>
-          <td>기사식당,돼지불백</td>
-          <td>4.1</td>
-          <td>서울특별시 강북구 한천로 1138 </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <table border="1" style="margin: 0 auto;">
+    <thead>
+      <tr>
+        <th>대표이미지</th>
+        <th>상호</th>
+        <th>구분</th>
+        <th>평점</th>
+        <th>위치</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 각 맛집의 이미지 + 텍스트 정보 -->
+      <tr>
+        <td><a href="pages/place1.html"><img src="./media/place1.jpg" alt="미성반점" width="100" height="100" title="이미지를 클릭하면 미성반점 상세페이지로 이동합니다."></a></td>
+        <td>미성반점</td>
+        <td>짬뽕, 중국집</td>
+        <td>4.6</td>
+        <td>서울특별시 강북구 4.19로 37 1층</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place2.html"><img src="./media/place2.jpg" alt="춘천막국수" width="100" height="100" title="이미지를 클릭하면 춘천막국수 상세페이지로 이동합니다."></a></td>
+        <td>춘천막국수</td>
+        <td>막국수, 녹두전</td>
+        <td>4.4</td>
+        <td>서울특별시 강북구 삼양로141길 4-4 춘천막국수</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place3.html"><img src="./media/place3.jpg" alt="궁전회관" width="100" height="100" title="이미지를 클릭하면 궁전회관 상세페이지로 이동합니다."></a></td>
+        <td>궁전회관</td>
+        <td>기사식당, 연탄불백</td>
+        <td>4.2</td>
+        <td>서울특별시 강북구 한천로 1159 1층</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place4.html"><img src="./media/place4.jpg" alt="히피스베이글" width="100" height="100" title="이미지를 클릭하면 히피스베이글 상세페이지로 이동합니다."></a></td>
+        <td>히피스베이글</td>
+        <td>베이글, 빵</td>
+        <td>4.7</td>
+        <td>서울특별시 강북구 삼양로 528 1층</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place5.html"><img src="./media/place5.jpg" alt="마포감자국" width="100" height="100"></a></td>
+        <td>마포감자국</td>
+        <td>감자탕, 감자국</td>
+        <td>4.4</td>
+        <td>서울특별시 강북구 한천로 1158 1층</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place6.html"><img src="./media/place6.jpg" alt="예와 손만두" width="100" height="100"></a></td>
+        <td>예와 손만두</td>
+        <td>만두, 만두전골</td>
+        <td>4.6</td>
+        <td>서울특별시 강북구 4.19로 40-8 예와 손만두</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place7.html"><img src="./media/place7.jpg" alt="진미기사식당" width="100" height="100"></a></td>
+        <td>진미기사식당</td>
+        <td>기사식당, 한천</td>
+        <td>4.1</td>
+        <td>서울특별시 강북구 한천로 1163 1층 진미기사식당</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place8.html"><img src="./media/place8.jpg" alt="우이동주막집" width="100" height="100"></a></td>
+        <td>우이동주막집</td>
+        <td>족발, 보쌈</td>
+        <td>4.2</td>
+        <td>서울특별시 강북구 삼양로141길 4-6 우이주막집</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place9.html"><img src="./media/place9.jpg" alt="슬로핸드" width="100" height="100"></a></td>
+        <td>슬로핸드</td>
+        <td>카페, 핸드드립커피</td>
+        <td>4.5</td>
+        <td>서울특별시 강북구 삼양로141길 15-8</td>
+      </tr>
+      <tr>
+        <td><a href="pages/place10.html"><img src="./media/place10.jpg" alt="엄마손 돼지불백" width="100" height="100"></a></td>
+        <td>엄마손 돼지불백</td>
+        <td>기사식당,돼지불백</td>
+        <td>4.1</td>
+        <td>서울특별시 강북구 한천로 1138 </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
  </body>
 </html>

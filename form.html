@@ -17,30 +17,29 @@
 
 
             const email = document.getElementById("email").value;
-            const name = document.getElementById("name").value;
+            const language = document.getElementById("language").value;
             const message = document.getElementById("message").value;
             const interest = document.getElementById("interest").value;
             const studyTime = document.getElementById("studyTime").value;
             const status = document.getElementById("status").value;
-            const major = document.getElementById("major").value;
+            const topics = [...document.querySelectorAll('input[name="topic"]:checked')].map(el => el.value).join(',');
+            const experience = document.querySelector('input[name="experience"]:checked')?.value || "";
         
 
 
 
-            fetch("https://script.google.com/macros/s/AKfycbw9jNdaHQzJuzCfr46vPAm82eDtUQ-Uo9AXoXPoLZg03nF_8nH5q9Il-dKppjEIyIMG/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbx8YM_jvO9formaa7fu1i-7UJJIIWDk9ISI3UQTdqkmDH71zJXbdw2eWFzLPOcmU3s/exec", {
 
                 method: "POST",
 
-                mode: "no-cors",
-
-
+               
                 headers: {
 
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/x-www-form-urlencoded"
 
                 },
 
-                body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&interest=${encodeURIComponent(interest)}&studyTime=${encodeURIComponent(studyTime)}&status=${encodeURIComponent(status)}&major=${encodeURIComponent(major)}`
+                body: `email=${encodeURIComponent(email)}&language=${encodeURIComponent(language)}&message=${encodeURIComponent(message)}&interest=${encodeURIComponent(interest)}&studyTime=${encodeURIComponent(studyTime)}&status=${encodeURIComponent(status)}&topic=${encodeURIComponent(topics)}&experience=${encodeURIComponent(experience)}`
 
             }).then(response => {
 
